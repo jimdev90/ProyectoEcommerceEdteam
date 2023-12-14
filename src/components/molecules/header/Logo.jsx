@@ -1,10 +1,16 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 
 const Logo = () => {
     return (
-        <div>
-            <img src="https://media.licdn.com/dms/image/C4E0BAQHw8XnbTtiGDA/company-logo_200_200/0/1630595421376/edteamlat_logo?e=2147483647&v=beta&t=ZCJioMc8udB6ntnl7MVUXpn6uVU5pnBl39FHgwW5J7A" alt="Logo Ecommerce"/>
+        <div className="flex">
+            <Link to="/">
+                <img
+                    src="https://assets.codepen.io/228448/internal/screenshots/pens/rGMORm.custom.jpg?version=1507739941"
+                    alt="Logo EDteam White"
+                />
+            </Link>
         </div>
     );
 };
