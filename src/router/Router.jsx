@@ -3,6 +3,7 @@ import Error404 from "../components/pages/Error404.jsx";
 import Products from "../components/pages/Products.jsx";
 import App from "../components/templates/App.jsx";
 import Home from "../components/pages/Home.jsx";
+import Login from "../components/pages/Login.jsx";
 
 
 const router = createBrowserRouter([
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
             }
         ]
     },
+    {
+        path: "/login",
+        element: <Login />
+    }
 
 ]);
 

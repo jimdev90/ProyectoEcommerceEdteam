@@ -7,8 +7,8 @@ const Logo = () => {
         <div className="flex">
             <Link to="/">
                 <img
-                    src="https://assets.codepen.io/228448/internal/screenshots/pens/rGMORm.custom.jpg?version=1507739941"
-                    alt="Logo EDteam White"
+                    src="https://http2.mlstatic.com/frontend-assets/ml-web-navigation/ui-navigation/6.5.14/mercadolibre/logo__large_plus.png"
+                    alt="Logo Mercado Libre"
                 />
             </Link>
         </div>
