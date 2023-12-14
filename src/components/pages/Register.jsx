@@ -1,11 +1,10 @@
 import React, {useState} from 'react';
+import LoginTemplate from "../templates/LoginTemplate.jsx";
+import {Link, useNavigate} from "react-router-dom";
 import axios from "axios";
 import {API_URL} from "../../constants/env.js";
-import {setToken} from "../../helpers/auth.js";
-import {Link, useNavigate} from "react-router-dom";
-import LoginTemplate from "../templates/LoginTemplate.jsx";
 
-const Login = () => {
+const Register = () => {
     const nav = useNavigate();
     const [error, setError] = useState("");
 
@@ -14,24 +13,28 @@ const Login = () => {
         setError("");
         const data = {
             email: e.target.email.value,
-            password: e.target.password.value
+            password: e.target.password.value,
+            details: {
+                fullName : e.target.name.value,
+            }
         }
 
-        axios.post(`${API_URL}/public/login`, data)
+        axios.post(`${API_URL}/public/users`, data)
             .then(resp => {
-                setToken(resp.data.data.token)
-                nav("/")
+                nav("/login")
             })
             .catch(error => {
                 console.log(error)
                 setError(error)
             })
-
     }
 
     return (
-        <LoginTemplate title="Iniciar Sesión">
+        <LoginTemplate title="Registrate">
             <form onSubmit={handleSubmit}>
+                <div className="mb-4">
+                    <input required type="text" name="name" placeholder="Nombre completo"/>
+                </div>
                 <div className="mb-4">
                     <input required type="email" name="email" placeholder="Correo electrónico"/>
                 </div>
@@ -40,8 +43,8 @@ const Login = () => {
                 </div>
                 <div className="text-center pt-1 mb-12 pb-1">
                     <button className="bg-gradient w-full" type="submit">Ingresar</button>
-                    <Link className="text-gray-500" to="/registro">
-                        ¿Deseas registrarte?
+                    <Link className="text-gray-500" to="/login">
+                        ¿Ya tienes una cuenta? Inicia Sesión
                     </Link>
                 </div>
 
@@ -57,4 +60,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Register;

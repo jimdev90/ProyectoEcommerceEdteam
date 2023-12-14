@@ -1,4 +1,4 @@
-import { API_URL} from "../../../env.js";
+import { API_URL} from "../../constants/env.js";
 
 function Home() {
   return (

@@ -1,4 +1,4 @@
-import {TOKEN_NAME} from "../../env.js";
+import {TOKEN_NAME} from "../constants/env.js";
 
 
 export const getToken = () => {
